@@ -60,8 +60,17 @@ formatter.match({
   "location": "StepDefinition.Step.user_is_navigated_to_home_screen()"
 });
 formatter.result({
-  "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\".jss121\"}\n  (Session info: chrome\u003d104.0.5112.101)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027Manus-MacBook-Air.local\u0027, ip: \u0027fe80:0:0:0:ccc:bc18:522:bc2d%en0\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002712.5\u0027, java.version: \u002717.0.3\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.101, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: /var/folders/5d/gq1pyt791nn...}, goog:chromeOptions: {debuggerAddress: localhost:56447}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 87fec6f34428e4bec2511e05f0856d68\n*** Element info: {Using\u003dclass name, value\u003djss121}\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByClassName(RemoteWebDriver.java:412)\n\tat org.openqa.selenium.By$ByClassName.findElement(By.java:389)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\n\tat StepDefinition.Step.user_is_navigated_to_home_screen(Step.java:48)\n\tat ✽.user is navigated to home screen(file:///Users/Manu/eclipse-workspace/MensioWebSanity/src/test/resources/Features/1login.feature:9)\n",
-  "status": "failed"
+  "status": "passed"
+});
+formatter.step({
+  "name": "take screenshot",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepDefinition.Step.take_screenshot()"
+});
+formatter.result({
+  "status": "passed"
 });
 formatter.uri("file:src/test/resources/Features/2homescreen.feature");
 formatter.feature({
@@ -261,11 +270,11 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "take screenshot of the chart",
+  "name": "take screenshot of the Summary Metrics chart",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "StepDefinition.Step.take_screenshot_of_the_chart()"
+  "location": "StepDefinition.Step.take_screenshot_of_the_Summary_Metrics_chart()"
 });
 formatter.result({
   "status": "passed"
@@ -320,11 +329,11 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "take screenshot of the chart",
+  "name": "take screenshot of the Share of Voice chart",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "StepDefinition.Step.take_screenshot_of_the_chart()"
+  "location": "StepDefinition.Step.take_screenshot_of_the_Share_of_Voice_chart()"
 });
 formatter.result({
   "status": "passed"
@@ -362,12 +371,110 @@ formatter.step({
   "name": "chart gets loaded and EMV is visible",
   "keyword": "And "
 });
+formatter.match({
+  "location": "StepDefinition.Step.chart_gets_loaded_and_EMV_is_visible()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "take screenshot of the Exposure Trends charts",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepDefinition.Step.take_screenshot_of_the_Exposure_Trends_charts()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "Verify that Visual Exposure - By Brand chart is loading properly",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@Sanity"
+    },
+    {
+      "name": "@Sanity"
+    },
+    {
+      "name": "@VisualExposure"
+    },
+    {
+      "name": "@ByBrand"
+    }
+  ]
+});
+formatter.step({
+  "name": "user click on By Brand sidemenu option",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "StepDefinition.Step.user_click_on_By_Brand_sidemenu_option()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "By Brand data gets loaded and table is visible",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepDefinition.Step.By_Brand_data_gets_loaded_and_table_is_visible()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "take screenshot of By brand chart",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepDefinition.Step.take_screenshot_of_By_brand_chart()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "Verify that Visual Exposure By Brand Asset Type chart is loading properly",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@Sanity"
+    },
+    {
+      "name": "@Sanity"
+    },
+    {
+      "name": "@VisualExposure"
+    },
+    {
+      "name": "@ByBrand\u0026AssetType"
+    }
+  ]
+});
+formatter.step({
+  "name": "user click on By Brand Asset Type sidemenu option",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "StepDefinition.Step.user_click_on_By_Brand_Asset_Type_sidemenu_option()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "By Brand \u0026 Asset Type data gets loaded and table is visible",
+  "keyword": "Then "
+});
 formatter.match({});
 formatter.result({
   "status": "undefined"
 });
 formatter.step({
-  "name": "take screenshot of the charts",
+  "name": "take screenshot of By Brand \u0026 Asset tyoe chart",
   "keyword": "Then "
 });
 formatter.match({});

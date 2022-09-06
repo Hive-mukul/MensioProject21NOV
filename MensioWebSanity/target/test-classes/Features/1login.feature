@@ -7,5 +7,6 @@ Feature: Check the login feature of Mensio Web Application
     When user enter email and password
     And user click on login button
     Then user is navigated to home screen
+    Then take screenshot
 
   
