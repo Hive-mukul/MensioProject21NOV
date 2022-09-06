@@ -43,12 +43,17 @@ public class Step extends CommonUtilities{
 
 	@Then("^user is navigated to home screen$")
 	public void user_is_navigated_to_home_screen() {
-		WebElement HomeElement = driver.findElement(By.xpath("//*[@id=\"root\"]/div[1]/div[1]/div/a[1]"));
+		WebElement HomeElement = driver.findElement(By.xpath("//*[@id=\"home-main-scrollable-container\"]/div[1]/div/span"));
 		Assert.assertEquals(true, HomeElement.isDisplayed());
-		driver.findElement(By.className("jss121")).click();
+		//driver.findElement(By.className("jss121")).click();
 		System.out.println("User navigated to home screen");
 	}
 	
+	@Then("^take screenshot$")
+	public void take_screenshot() {
+		WebDriverWait wait = new WebDriverWait(driver,10);
+		CommonUtilities.Screenshot("Login", "login");
+	}
 	
 	///////////Check all items visibility on home screen\\\\\\\\\\
 
@@ -152,16 +157,17 @@ public class Step extends CommonUtilities{
 	}
 
 
-	@Then("^take screenshot of the chart$")
-	public void take_screenshot_of_the_chart() {
-	    System.out.println("Screenshot of Relative Exposure Summary Chart is taken");
+	@Then("^take screenshot of the Summary Metrics chart$")
+	public void take_screenshot_of_the_Summary_Metrics_chart() {
+	    CommonUtilities.Screenshot("TelevisionByBrand","Summary Metrics");
 	}
 	
 	
 	//////////Check Chart loaded properly in Television by Brand - Share of Voice\\\\\\\\\\
 	
 	@When("^user click on Share of Voice sidemenu option")
-	public void user_click_on_Share_of_Voice_sidemenu_option() {
+	public void user_click_on_Share_of_Voice_sidemenu_option() throws InterruptedException {
+	    Thread.sleep(2000);
 	    driver.findElement(By.xpath("//*[@id=\"contents-container\"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[1]/div[3]/a/p")).click();
 	}
 
@@ -178,11 +184,52 @@ public class Step extends CommonUtilities{
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"contents-container\"]/div/div[2]/div/div[4]/span")));
 	}
 	
+	@Then("^take screenshot of the Share of Voice chart")
+	public void take_screenshot_of_the_Share_of_Voice_chart() {
+		CommonUtilities.Screenshot("TelevisionByBrand","Share of Voice");
+	}
+	
 	////////////Check chart loaded properly in Television - By Brand - Exposure trends\\\\\\\\\\\
 	
 	@When("^user click on Exposure Trends sidemenu option")
 	public void user_click_on_Exposure_Trends_sidemenu_option() {
 		driver.findElement(By.xpath("//*[@id=\"contents-container\"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[1]/div[4]/a/p")).click();
+	}
+	
+	@And("^chart gets loaded and EMV is visible")
+	public void chart_gets_loaded_and_EMV_is_visible() {
+		WebDriverWait wait = new WebDriverWait(driver,30);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"contents-container\"]/div/div[2]/div/div[3]/span")));
+	}
+	
+	@Then("^take screenshot of the Exposure Trends charts")
+	public void take_screenshot_of_the_Exposure_Trends_charts() {
+		CommonUtilities.Screenshot("TelevisionByBrand","Exposure Trends");
+	}
+	
+	//////Verify that Visual Exposure - By Brand chart is loading properly//////
+	
+	@When("^user click on By Brand sidemenu option")
+	public void user_click_on_By_Brand_sidemenu_option() {
+		driver.findElement(By.xpath("//*[@id=\"contents-container\"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[1]/div[5]/a/p")).click();
+	}
+    
+	@Then("^By Brand data gets loaded and table is visible")
+	public void By_Brand_data_gets_loaded_and_table_is_visible() {
+		WebDriverWait wait = new WebDriverWait(driver,60);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"contents-container\"]/div/div[2]/div/div[5]/span")));
+	}
+	
+	@Then("^take screenshot of By brand chart")
+	public void take_screenshot_of_By_brand_chart() {
+		CommonUtilities.Screenshot("TelevisionByBrand", "ByBrand");
+	}
+	
+	////Verify that Visual Exposure - By Brand & Asset Type chart is loading properly\\\\\\\\\\\
+	
+	@When("^user click on By Brand Asset Type sidemenu option")
+	public void user_click_on_By_Brand_Asset_Type_sidemenu_option() {
+		driver.findElement(By.xpath("/html/body/div/div[2]/div/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[1]/div[6]/a/p")).click();
 	}
 
 }
