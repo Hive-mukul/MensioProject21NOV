@@ -49,7 +49,7 @@ public class Step extends CommonUtilities{
 		System.out.println("User navigated to home screen");
 	}
 	
-	@And("^take screenshot$")
+	@Then("^take screenshot$")
 	public void take_screenshot() {
 		WebDriverWait wait = new WebDriverWait(driver,10);
 		CommonUtilities.Screenshot("Login", "login");
@@ -157,7 +157,7 @@ public class Step extends CommonUtilities{
 	}
 
 
-	@And("^take screenshot of the Summary Metrics chart$")
+	@Then("^take screenshot of the Summary Metrics chart$")
 	public void take_screenshot_of_the_Summary_Metrics_chart() {
 	    CommonUtilities.Screenshot("TelevisionByBrand","Summary Metrics");
 	}
@@ -168,16 +168,23 @@ public class Step extends CommonUtilities{
 	@When("^user click on Share of Voice sidemenu option")
 	public void user_click_on_Share_of_Voice_sidemenu_option() throws InterruptedException {
 	    Thread.sleep(2000);
-	    driver.findElement(By.xpath("/html/body/div/div[2]/div/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[1]/div[5]/a/p")).click();
+	    driver.findElement(By.xpath("//*[@id=\"contents-container\"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[1]/div[3]/a/p")).click();
+	}
+
+	@And("^user directs to Share of Voice chart")
+	public void user_directs_to_Share_of_Voice_chart() {
+		WebDriverWait wait = new WebDriverWait(driver,30);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"contents-container\"]/div/div[2]/div/div[4]/span")));
+	    
 	}
    
 	@Then("^chart gets loaded and EMV data is visible")
 	public void chart_gets_loaded_and_EMV_data_is_visible() {
 		WebDriverWait wait = new WebDriverWait(driver,30);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"contents-container\"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[1]/div[5]/a/p")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"contents-container\"]/div/div[2]/div/div[4]/span")));
 	}
 	
-	@And("^take screenshot of the Share of Voice chart")
+	@Then("^take screenshot of the Share of Voice chart")
 	public void take_screenshot_of_the_Share_of_Voice_chart() {
 		CommonUtilities.Screenshot("TelevisionByBrand","Share of Voice");
 	}
@@ -186,7 +193,7 @@ public class Step extends CommonUtilities{
 	
 	@When("^user click on Exposure Trends sidemenu option")
 	public void user_click_on_Exposure_Trends_sidemenu_option() {
-		driver.findElement(By.xpath("/html/body/div/div[2]/div/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[1]/div[4]/a/p")).click();
+		driver.findElement(By.xpath("//*[@id=\"contents-container\"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[1]/div[4]/a/p")).click();
 	}
 	
 	@And("^chart gets loaded and EMV is visible")
@@ -195,7 +202,7 @@ public class Step extends CommonUtilities{
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"contents-container\"]/div/div[2]/div/div[3]/span")));
 	}
 	
-	@And("^take screenshot of the Exposure Trends charts")
+	@Then("^take screenshot of the Exposure Trends charts")
 	public void take_screenshot_of_the_Exposure_Trends_charts() {
 		CommonUtilities.Screenshot("TelevisionByBrand","Exposure Trends");
 	}
@@ -204,16 +211,16 @@ public class Step extends CommonUtilities{
 	
 	@When("^user click on By Brand sidemenu option")
 	public void user_click_on_By_Brand_sidemenu_option() {
-		driver.findElement(By.xpath("/html/body/div/div[2]/div/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[1]/div[6]/a/p")).click();
+		driver.findElement(By.xpath("//*[@id=\"contents-container\"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[1]/div[5]/a/p")).click();
 	}
     
 	@Then("^By Brand data gets loaded and table is visible")
 	public void By_Brand_data_gets_loaded_and_table_is_visible() {
 		WebDriverWait wait = new WebDriverWait(driver,60);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div/div[2]/div/div/div[2]/div/div[5]/span")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"contents-container\"]/div/div[2]/div/div[5]/span")));
 	}
 	
-	@And("^take screenshot of By brand chart")
+	@Then("^take screenshot of By brand chart")
 	public void take_screenshot_of_By_brand_chart() {
 		CommonUtilities.Screenshot("TelevisionByBrand", "ByBrand");
 	}
@@ -222,35 +229,7 @@ public class Step extends CommonUtilities{
 	
 	@When("^user click on By Brand Asset Type sidemenu option")
 	public void user_click_on_By_Brand_Asset_Type_sidemenu_option() {
-		driver.findElement(By.xpath("/html/body/div/div[2]/div/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[1]/div[7]/a/p")).click();
-	}
-	
-	@Then("^By Brand Asset Type data gets loaded and table is visible")
-	public void By_Brand_Asset_Type_data_gets_loaded_and_table_is_visible() {
-		WebDriverWait wait = new WebDriverWait(driver,120);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div/div[2]/div/div/div[2]/div/div[3]/div/div[1]/table/thead/tr/th[5]")));
-	}
-	
-	@And("^take screenshot of By Brand Asset type chart")
-	public void take_screenshot_of_By_Brand_Asset_type_chart() {
-		CommonUtilities.Screenshot("TelevisionByBrand", "ByBrandAssetType");
-	}
-	
-	/////Verify that Visual Exposure - By Program chart is loading properly\\\\\\\\\\\\\\\
-	
-	@When("^user click on By Program sidemenu option")
-	public void user_click_on_By_Program_sidemenu_option() throws InterruptedException {
-		driver.findElement(By.xpath("/html/body/div/div[2]/div/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[1]/div[8]/a/p")).click();
-		Thread.sleep(2000);
-	}
-	
-	@Then("^user click on Submit after choosing program and episode")
-	public void user_click_on_Submit_after_choosing_program_and_episode() {
-		driver.findElement(By.xpath("//*[@id=\"contents-container\"]/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div")).click();
-
-		
-
-
+		driver.findElement(By.xpath("/html/body/div/div[2]/div/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[1]/div[6]/a/p")).click();
 	}
 
 }
