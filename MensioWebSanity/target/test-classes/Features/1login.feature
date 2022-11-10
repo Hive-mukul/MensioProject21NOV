@@ -1,4 +1,4 @@
-@Sanity @login @SS
+@Sanity @login @CR
 Feature: Check the login feature of Mensio Web Application
 
   Scenario: To verify that user is able to login using valid credentials

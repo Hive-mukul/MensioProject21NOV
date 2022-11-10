@@ -1,22 +1,23 @@
-@Sanity
+@Sanity 
 Feature: Check all the charts are loading properly in TelevisionByBrand
 
-@Sanity @TelevisionByBrand @SummaryMetrics @SS
+@Sanity @TelevisionByBrand @SummaryMetrics @Dry
 Scenario: Verify that Summary Metrics chart is loading properly
 
-When user click on Television by Brand card 
+When user click on Television by Brand card
+Then user click on Summary Metrics sidemenu icon 
 And user directs to the Summary Metrics chart
 Then chart gets loaded and Number of Programs is visible
 And take screenshot of the Summary Metrics chart 
 
-@Sanity @TelevisionByBrand @ShareOfVoice
+@Sanity @TelevisionByBrand @ShareOfVoice @Dry
 Scenario: Verify that Share of Voice chart is loading properly
 
 When user click on Share of Voice sidemenu option
 Then chart gets loaded and EMV data is visible
 And take screenshot of the Share of Voice chart
 
-@Sanity @TelevisionByBrand @ExposureTrends
+@Sanity @TelevisionByBrand @ExposureTrends @Dry
 Scenario: Verify that Exposure Trends chart is loading properly
 
 When user click on Exposure Trends sidemenu option
