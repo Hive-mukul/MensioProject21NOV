@@ -1,4 +1,4 @@
-@Sanity
+@Sanity 
 Feature: Check all charts are loading properly in Television - Team as Brand 
 
 @Sanity @TeamAsBrand @TeamSummaryBeta 

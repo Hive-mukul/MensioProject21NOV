@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(features="src/test/resources/Features", glue= {"StepDefinition"}, 
 monochrome = true, 
 plugin = {"pretty", "html:target/HtmlReports"},
-tags="@SS")
+tags="@Sanity")
 
 
 public class TestRunner {
