@@ -33,7 +33,7 @@ public static void Chrome()
 {
 	
 	System.setProperty("webdriver.chrome.driver",projectPath+"/src/test/resources/drivers/chromedriver");
-	System.setProperty("webdriver.chrome.driver",projectPath+"/src/test/resources/drivers/chromedriver.exe");
+//	System.setProperty("webdriver.chrome.driver",projectPath+"/src/test/resources/drivers/chromedriver.exe");
 
 	driver = new ChromeDriver();
 	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
