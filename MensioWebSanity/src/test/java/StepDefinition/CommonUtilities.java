@@ -26,7 +26,6 @@ public class CommonUtilities {
 	//System.out.println("Project Path is:"+projectPath);
 	public static WebDriver driver;
 
----
 
 
 public static void Chrome()
