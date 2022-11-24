@@ -43,6 +43,7 @@ public void user_is_navigated_to_home_screen() {
 	Assert.assertEquals(true, HomeElement.isDisplayed());
 	driver.findElement(By.className("jss121")).click();
 	System.out.println("User navigated to home screen");
+	driver.findElement(By.xpath("//*[name()='svg']//*[local-name()='g']//*[local-name()='path' and @d='M13 1L1 13M1 1l12 12']")).click(); // line for closing updates tab
 }
 
 @And("^take screenshot$")
@@ -50,6 +51,8 @@ public void take_screenshot() {
 	WebDriverWait wait = new WebDriverWait(driver,10);
 	CommonUtilities.Screenshot("Login", "login");
 }
+
+
 
 
 }
