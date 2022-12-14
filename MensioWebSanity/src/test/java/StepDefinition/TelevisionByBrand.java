@@ -137,10 +137,12 @@ public class TelevisionByBrand extends CommonUtilities{
 	public void user_click_on_Submit_after_choosing_program_and_episode() {
 		WebDriverWait wait = new WebDriverWait(driver,20);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='contents-container']/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div")));
-		driver.findElement(By.xpath("//*[@id='contents-container']/div/div[2]/div/div[2]/div[2]/div[2]/div/div/div")).click();
-		WebElement we = driver.findElement(By.xpath("//div[2]/div[2]/div[2]/div/div/div/div/div/div/div/input"));
-		we.sendKeys("noche");
-		we.sendKeys(Keys.RETURN);
+		driver.findElement(By.xpath("//*[@id=\"contents-container\"]/div/div[2]/div/div[2]/div[2]/div[2]/div/div")).click();
+		driver.findElement(By.xpath("//div[2]/div[2]/div[2]/div/div/div/div/div/div/div/input")).sendKeys("Inside the NBA"+"\n");
+		driver.findElement(By.xpath("//*[@id=\"contents-container\"]/div/div[2]/div/div[2]/div[2]/div[3]/div/div")).click();
+		driver.findElement(By.xpath("//div[3]/div/div/div/div/div/div/div/input")).sendKeys("Untitled"+"\n");
+		driver.findElement(By.xpath("//*[@id=\"contents-container\"]/div/div[2]/div/div[2]/div[2]/div[5]")).click();
+		
 	}
 		
 ///////Verify that Verbal Exposure - By Brand chart is loading properly////////
