@@ -90,8 +90,8 @@ public class NBCU extends CommonUtilities {
 		driver.findElement(By.xpath("//*[@id=\"contents-container\"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[1]/div[4]")).click();
 		Thread.sleep(8000);
 		driver.findElement(By.xpath("//*[@id=\"contents-container\"]/div/div[2]/div/div[3]/div[1]/div[1]/div/div/div")).click();
-		driver.findElement(By.id("react-select-8-input")).sendKeys("Ford");
-		driver.findElement(By.id("react-select-8-input")).sendKeys(Keys.ENTER);
+		driver.findElement(By.xpath("//input")).sendKeys("Ford"+"\n");
+		
 	}
 	
 	@Then("^user choose date$")
