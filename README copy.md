@@ -1,3 +1,0 @@
-# MensioWebAutomation
-
-git branch
