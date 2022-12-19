@@ -6,6 +6,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -13,6 +15,7 @@ import junit.framework.Assert;
 
 public class NBCU extends CommonUtilities {
 		
+	
 	
 	@When("^user click on NBCU card$")
 	public void user_click_on_NBCU_card() throws InterruptedException
@@ -87,7 +90,12 @@ public class NBCU extends CommonUtilities {
 	@Then("^user choose brand$")
 	public void user_choose_brand() throws InterruptedException {
 		
-		driver.findElement(By.xpath("//*[@id=\"contents-container\"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[1]/div[4]")).click();
+		WebDriverWait wait = new WebDriverWait(driver, 100); 
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"contents-container\"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[1]/div[4]")));
+		element.click();
+
+		
+		//driver.findElement(By.xpath("//*[@id=\"contents-container\"]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[1]/div[4]")).click();
 		Thread.sleep(8000);
 		driver.findElement(By.xpath("//*[@id=\"contents-container\"]/div/div[2]/div/div[3]/div[1]/div[1]/div/div/div")).click();
 		driver.findElement(By.xpath("//input")).sendKeys("Ford"+"\n");

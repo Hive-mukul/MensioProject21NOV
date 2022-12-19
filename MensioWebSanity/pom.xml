@@ -12,6 +12,8 @@
   
   
   <name>MensioWebSanity</name>
+  
+  
   <dependencies>
   <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
 <dependency>
@@ -26,6 +28,9 @@
     <version>4.13</version>
     <scope>test</scope>
 </dependency>
+
+
+
 <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
 <dependency>
     <groupId>io.cucumber</groupId>
@@ -45,6 +50,16 @@
     <artifactId>ashot</artifactId>
     <version>1.5.4</version>
 </dependency>
+
+<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+<dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>7.6.1</version>
+    <scope>test</scope>
+</dependency>
+
+
 
   </dependencies>
 </project>
